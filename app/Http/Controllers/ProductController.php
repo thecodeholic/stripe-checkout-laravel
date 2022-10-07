@@ -84,13 +84,13 @@ class ProductController extends Controller
 
     public function cancel()
     {
-        
+
     }
 
     public function webhook()
     {
         // This is your Stripe CLI webhook secret for testing your endpoint locally.
-        $endpoint_secret = env('STRIPE_WWEBHOOK_SECRET');
+        $endpoint_secret = env('STRIPE_WEBHOOK_SECRET');
 
         $payload = @file_get_contents('php://input');
         $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
